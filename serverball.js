@@ -2,7 +2,7 @@ var net = require('net');
 var port = 3000;
 var fs = require('fs');
 
-var responses = ["You are wright", "You are wrong", "ther is no way"];
+var responses = ["You are right", "You are wrong", "there is no way"];
 
 var server = net.createServer(function(c){
 	console.log('client connected');
@@ -11,8 +11,8 @@ var server = net.createServer(function(c){
 		var input = data.toString().trim()
 		var response = responses[Math.floor(Math.random()*responses.length)];
 		c.write(response.toString().trim())
-
-
+		if (input === '/\?//')
+			c.write("hello")
 		//console.log(data.toString().trim());
 	})
 
