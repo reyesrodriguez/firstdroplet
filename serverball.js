@@ -11,8 +11,6 @@ var server = net.createServer(function(c){
 		var input = data.toString().trim()
 		var response = responses[Math.floor(Math.random()*responses.length)];
 		c.write(response.toString().trim())
-		if (input === '/\?//')
-			c.write("hello")
 		//console.log(data.toString().trim());
 	})
 
